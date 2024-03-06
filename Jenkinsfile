@@ -3,12 +3,12 @@ pipeline{
     stages{
         stage("Prepare Laravel"){
             steps{
-                sh php artisan key:generate
+                sh 'php artisan key:generate'
             }
         }
         stage("Laravel Test"){
             steps{
-                sh php artisan test
+                sh 'php artisan test'
             }
         }
         stage("Dockerized Laravel"){
